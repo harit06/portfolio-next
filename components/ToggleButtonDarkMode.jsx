@@ -15,7 +15,6 @@ export default function ToggleButton() {
       document.body.classList.remove("dark")
     }
     localStorage.setItem("darkMode", darkMode)
-    console.log(darkMode)
   }, [darkMode])
 
   return (

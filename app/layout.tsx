@@ -14,6 +14,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta
+          name="google-site-verification"
+          content="iaE94cKDeyLqGufTBN_gIW7Nqzlqbe_xAHLiue-NIEY"
+        />
+      </head>
       <body
         className={`antialiased theme-primary transition-colors duration-1800`}
       >

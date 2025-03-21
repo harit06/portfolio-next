@@ -19,7 +19,7 @@ function Projects() {
 
   const projects = [
     {
-      src: "/swiftsoft.png",
+      image: { src: "/swiftsoft.jpg", thumbnail: "/swiftsoft-thumbnail.jpg" },
       title: "Swift Soft",
       description:
         "Designed a dynamic system tailored to streamline job applications by fetching over 100 software job postings across the US daily. This tool enhances job seekers visibility by ensuring timely applications, capitalizing on data that indicates earlier applications significantly increase the likelihood of a hiring manager's review.",
@@ -27,21 +27,21 @@ function Projects() {
       url: "https://swiftsoftjobs.web.app",
     },
     {
-      src: "/nfc.png",
+      image: { src: "/nfc.jpg", thumbnail: "/nfc-thumbnail.jpg" },
       title: "NFC Scan Roll",
       description:
         "Developed an innovative Android application, that utilizes the device's NFC module to scan RFID tags, marking students present for classes. The system automatically generates reports using the Apache POI library for Excel sheet manipulation and updates attendance records to the university portal.",
       tags: ["Android", "NFC", "RF"],
     },
     {
-      src: "/smarthome2.png",
+      image: { src: "/smarthome2.jpg", thumbnail: "/smarthome2-thumbnail.jpg" },
       title: "Smart Home",
       description:
         "Crafted an advanced smart home automation system utilizing a Raspberry Pi to serve as the central hub and an Android application for the user interface. Enhanced the system with voice control functionality to enable seamless user interactions. Additionally, integrated Siri compatibility via Siri Shortcuts to extend seamless control to iPhone users.",
       tags: ["Raspberry Pi", "Android", "NLP"],
     },
     {
-      src: "/vallet.png",
+      image: { src: "/vallet.jpg", thumbnail: "/vallet-thumbnail.jpg" },
       title: "Hardware Wallet",
       description:
         "Engineered a secure hardware wallet for storing cryptographic keys that ensures physical isolation by disallowing any network connection, enhancing security against digital theft.",
@@ -94,11 +94,13 @@ function Projects() {
                     <div className="p-4 md:p-3 place-items-center overflow-hidden">
                       {/* Image */}
                       <Image
-                        src={project.src}
-                        className="p-1 rounded-2xl object-cover"
+                        src={project.image.src}
+                        className="p-1 rounded-2xl object-cover "
                         width={800}
                         height={800}
                         alt={project.title}
+                        placeholder="blur"
+                        blurDataURL={project.image.thumbnail}
                       ></Image>
 
                       {/* Title */}
