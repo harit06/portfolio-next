@@ -100,10 +100,10 @@ const ExperienceTimeline = () => {
   return (
     <div className="flex items-center justify-center min-h-screen mt-5 md:mt-15">
       <div className="flex flex-col items-center w-full">
-        <h1 className="text-center font-black md:text-4xl uppercase tracking-widest mt-20 md:mt-2 font-serif">
+        <h1 className="text-center font-black md:text-4xl page-title uppercase tracking-widest mt-20 md:mt-2 font-serif">
           Experience
         </h1>
-        <span className="inline-flex m-2 h-2 w-10 bg-gray-400 dark:bg-gray-700 rounded-full"></span>
+        <span className="inline-flex m-2 h-2 w-10 page-titleline rounded-full"></span>
 
         {/* Contents */}
         <div className="p-10 md:p-20 md:max-w-3/4 w-full">
@@ -111,7 +111,7 @@ const ExperienceTimeline = () => {
             {experiences.map((exp, index) => (
               <li
                 key={index}
-                className={`flex flex-col mb-10 ms-6 ${dynapuff.className} `}
+                className={`flex flex-col mb-6 ms-6 ${dynapuff.className} `}
               >
                 {/* Timeline Dot */}
                 <span className="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -start-3 ring-8 ring-white dark:ring-gray-900 dark:bg-gray-800">
@@ -147,7 +147,7 @@ const ExperienceTimeline = () => {
                 </p>
 
                 {/* Tags */}
-                <div className="hidden gap-x-2 gap-y-3 mt-auto md:grid md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 2xl:grid-cols-8">
+                <div className="hidden md:flex md:flex-wrap overflow-hidden items-end pb-3 mt-auto px-4 gap-1">
                   {exp.tags.map((tag, index) => (
                     <div
                       className="px-3 py-1 text-xs lg:text-sm rounded-4xl bg-gray-300 dark:bg-teal-300/50 dark:text-white lg:w-30 text-center"
@@ -164,9 +164,9 @@ const ExperienceTimeline = () => {
                     atma400.className
                   } mt-2 p-4 bg-gray-100 dark:bg-[#151515] rounded-lg ${
                     openItems[index]
-                      ? "max-h-[500px] opacity-100"
+                      ? "max-h-[600px] opacity-100"
                       : "max-h-0 opacity-0"
-                  } transition-all duration-1800`}
+                  } transition-all duration-1800 overflow-hidden`}
                 >
                   <ul className="space-y-2 list-inside list-disc ex-content-extra">
                     {exp.details.map((point, i) => (

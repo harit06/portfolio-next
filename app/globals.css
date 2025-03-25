@@ -9,6 +9,13 @@
   @apply text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white;
 }
 
+.page-title {
+  @apply text-gray-500 dark:text-white;
+}
+.page-titleline {
+  @apply bg-gray-300 dark:bg-gray-700;
+}
+
 .tooltip {
   position: relative;
   display: inline-block;
@@ -104,7 +111,7 @@
 }
 
 .skill-icons {
-  @apply h-7 w-7 sm:w-10 sm:h-10 md:h-12 md:w-12 lg:h-15 lg:w-15;
+  @apply h-7 w-7 sm:w-8 sm:h-8 lg:h-9 lg:w-9 xl:w-10 xl:h-10 2xl:w-12 2xl:h-12;
 }
 
 .ex-title {

@@ -1,11 +1,18 @@
 import { useEffect, useState } from "react"
 
 export default function ToggleButton() {
-  const [darkMode, setDarkMode] = useState(null)
+  const [darkMode, setDarkMode] = useState<boolean | null>(null)
 
   useEffect(() => {
     const storedDarkMode = localStorage.getItem("darkMode")
-    setDarkMode(storedDarkMode)
+    const isDarkMode =
+      storedDarkMode === "true"
+        ? true
+        : storedDarkMode === "false"
+        ? false
+        : false
+
+    setDarkMode(isDarkMode)
   }, [])
 
   useEffect(() => {
@@ -14,7 +21,7 @@ export default function ToggleButton() {
     } else {
       document.body.classList.remove("dark")
     }
-    localStorage.setItem("darkMode", darkMode)
+    localStorage.setItem("darkMode", JSON.stringify(darkMode))
   }, [darkMode])
 
   return (

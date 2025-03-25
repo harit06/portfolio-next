@@ -10,24 +10,30 @@ const About = () => {
     "https://images.credly.com/images/0e284c3f-5164-4b21-8660-0d84737941bc/twitter_thumb_201604_image.png"
   const awsCloudPractitionerBadgeUrl =
     "https://images.credly.com/images/00634f82-b07f-4bbd-a6bb-53de397fc3a6/image.png"
+  const awsCloudPractitionerCertUrl =
+    "https://www.credly.com/badges/fb65f6c4-9af5-4cad-a6ca-566978fe42a9"
+  const awsSolutionsArchitectCertUrl =
+    "https://www.credly.com/badges/a4d9d4fa-6642-4e4a-8e09-a397818687bd"
   return (
     <div className="flex flex-col items-center justify-center min-h-screen mt-17 md:mt-15 pb-10 overflow-hidden">
       <div className="flex flex-col items-center">
-        <h1 className="text-center font-black md:text-4xl uppercase font-serif tracking-widest">
+        <h1 className="text-center font-black md:text-4xl uppercase font-serif tracking-widest page-title">
           About
         </h1>
-        <span className="inline-flex m-2 h-2 w-10 bg-gray-400 dark:bg-gray-700 rounded-full overflow-hidden"></span>
+        <span className="inline-flex m-2 h-2 w-10 page-titleline rounded-full overflow-hidden"></span>
 
         {/* Contents */}
 
-        <div className="pt-2 md:pt-4 flex justify-evenly w-screen px-2">
-          <Image
-            className="fade-in-ltr hidden lg:block w-40 h-40"
-            src={awsSolutionsArchitectBadgeUrl}
-            width={500}
-            height={500}
-            alt="aws certified solutions architect"
-          ></Image>
+        <div className="pt-2 md:pt-4 flex justify-evenly w-screen px-2 ">
+          <Link href={awsSolutionsArchitectCertUrl}>
+            <Image
+              className="fade-in-ltr hidden lg:block w-40 h-40"
+              src={awsSolutionsArchitectBadgeUrl}
+              width={500}
+              height={500}
+              alt="aws certified solutions architect"
+            ></Image>
+          </Link>
           <div className="text-center flex flex-col justify-center items-center">
             <h4
               className={`${dynapuff.className} text-xl md:text-3xl pt-1 md:pt-2 font-bold`}
@@ -40,13 +46,15 @@ const About = () => {
               I turn visionary ideas into captivating digital realities.
             </h4>
           </div>
-          <Image
-            className="fade-in-rtl hidden lg:block w-40 h-40"
-            src={awsCloudPractitionerBadgeUrl}
-            width={500}
-            height={500}
-            alt="aws certified solutions architect"
-          ></Image>
+          <Link href={awsCloudPractitionerCertUrl}>
+            <Image
+              className="fade-in-rtl hidden lg:block w-40 h-40"
+              src={awsCloudPractitionerBadgeUrl}
+              width={500}
+              height={500}
+              alt="aws certified solutions architect"
+            ></Image>
+          </Link>
         </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 pt-4 md:pt-8 xl:pt-20 md: gap-4 px-4 xl:w-[90%]">

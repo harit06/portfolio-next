@@ -6,7 +6,7 @@ import { DynaPuff } from "next/font/google"
 
 const dynapuff = DynaPuff({ subsets: ["latin"] })
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 
 function Projects() {
   const [page, setPage] = useState(0)
@@ -37,7 +37,7 @@ function Projects() {
       image: { src: "/smarthome2.jpg", thumbnail: "/smarthome2-thumbnail.jpg" },
       title: "Smart Home",
       description:
-        "Crafted an advanced smart home automation system utilizing a Raspberry Pi to serve as the central hub and an Android application for the user interface. Enhanced the system with voice control functionality to enable seamless user interactions. Additionally, integrated Siri compatibility via Siri Shortcuts to extend seamless control to iPhone users.",
+        "Crafted an advanced smart home automation system utilizing a Raspberry Pi to serve as the central hub and an Android application for the user interface. Enhanced the system with voice control functionality to enable seamless user interactions. Additionally, integrated Apple compatibility via Siri Shortcuts.",
       tags: ["Raspberry Pi", "Android", "NLP"],
     },
     {
@@ -69,17 +69,17 @@ function Projects() {
   return (
     <div className="flex items-center justify-center min-h-screen mt-5 md:mt-15 pb-10">
       <div className="flex flex-col items-center">
-        <h1 className="text-center font-black md:text-4xl uppercase font-serif tracking-widest">
+        <h1 className="text-center font-black md:text-4xl page-title uppercase font-serif tracking-widest">
           Projects
         </h1>
-        <span className="inline-flex m-2 h-2 w-10 bg-gray-400 dark:bg-gray-700 rounded-full overflow-hidden"></span>
+        <span className="inline-flex m-2 h-2 w-10 page-titleline rounded-full overflow-hidden"></span>
 
         {/* Contents */}
-        <div className="relative w-3/4">
-          <div className="overflow-hidden pt-2 md:pt-10 opacity-mask">
+        <div className="relative w-3/4 overflow-x-hidden">
+          <div className="overflow-hidden pt-2 md:pt-5 opacity-mask">
             {/* Carosel */}
             <div
-              className="flex transition-transform duration-3000 ease-in-out gap-[5%] md:gap-[2%] translate-x-[15%] md:translate-x-[33%] pb-10"
+              className="flex transition-transform duration-3000 ease-in-out gap-[5%] md:gap-[2%] translate-x-[15%] md:translate-x-[33%] pb-10 overflow-h-hidden"
               style={{
                 transform: `translateX(-${page * translateValue}%)`,
               }}
@@ -91,11 +91,11 @@ function Projects() {
                 border-2 dark:border-gray-700 border-gray-200 dark:bg-[#151515] justify-center items-center rounded-2xl`}
                     key={index}
                   >
-                    <div className="p-4 md:p-3 place-items-center overflow-hidden">
+                    <div className="p-4 place-items-center overflow-hidden">
                       {/* Image */}
                       <Image
                         src={project.image.src}
-                        className="p-1 rounded-2xl object-cover "
+                        className="rounded-2xl object-cover"
                         width={800}
                         height={800}
                         alt={project.title}
@@ -105,7 +105,7 @@ function Projects() {
 
                       {/* Title */}
                       <div
-                        className={`text-sm xl:text-2xl font-bold dark:text-white text-black text-center py-1 md:py-3  uppercase ${dynapuff.className} `}
+                        className={`text-sm xl:text-xl font-bold dark:text-white text-black text-center py-1 md:py-3  uppercase  `}
                       >
                         {project.url ? (
                           <Link href={project.url}>
@@ -125,17 +125,17 @@ function Projects() {
 
                       {/* Description */}
                       <p
-                        className={`text-[10px] flex xl:text-sm md:pb-3 text-justify text-gray-400 dark:text-gray-300 ${dynapuff.className} `}
+                        className={`text-[10px] 2xl:text-sm flex text-justify text-gray-400 dark:text-gray-300 ${dynapuff.className} `}
                       >
                         {project.description}
                       </p>
                     </div>
 
                     {/* Tags */}
-                    <div className="hidden md:flex overflow-hidden items-end justify-center space-x-2 md:space-x-5 pb-3 md:pb-10 mt-auto">
+                    <div className="hidden md:flex md:flex-wrap overflow-hidden items-end pb-3 mt-auto px-4 gap-1">
                       {project.tags.map((tag, index) => (
                         <div
-                          className={`px-3 py-1 text-[10px] font-bold tracking-widest xl:text-sm rounded-4xl bg-gray-400 dark:bg-teal-300/50 text-white`}
+                          className={`px-3 py-1 text-[10px] font-bold tracking-widest rounded-4xl bg-gray-400 dark:bg-teal-300/50 text-white`}
                           key={index}
                         >
                           {tag}

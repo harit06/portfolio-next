@@ -33,12 +33,12 @@ function Skills() {
   ]
 
   return (
-    <div className="flex items-center justify-center min-h-screen">
+    <div className="flex items-center justify-center min-h-screen mt-5 md:mt-15 pb-10">
       <div className="flex flex-col items-center">
-        <h1 className="text-center font-black md:text-4xl uppercase tracking-widest font-serif">
+        <h1 className="text-center font-black md:text-4xl uppercase page-title tracking-widest font-serif">
           Skills
         </h1>
-        <span className="inline-flex m-2 h-2 w-10 bg-gray-400 dark:bg-gray-700 rounded-full"></span>
+        <span className="inline-flex m-2 h-2 w-10 page-titleline rounded-full"></span>
 
         <div className="pt-5 md:pt-8 grid grid-cols-5 gap-3 md:gap-7">
           {skillIcons.map((icon, index) => (

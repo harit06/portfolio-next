@@ -13,6 +13,13 @@ export default function HomeNav() {
   const handleMobileMenuClick = () => {
     setIsOpen(!isOpen)
   }
+  const handleOpenPDF = () => {
+    window.open(
+      "/public/HariharasudhanResume.pdf",
+      "_blank",
+      "noopener,noreferrer"
+    )
+  }
 
   return (
     <div className="top-0 z-50 fixed w-full bg-gradient-to-b dark:from-black/80 dark:to-black/10 from-white/80 to-white-10 transition-colors duration-1800">
@@ -94,22 +101,31 @@ export default function HomeNav() {
                   >
                     Projects
                   </Link>
+                  <Link
+                    href="HariharasudhanResume.pdf"
+                    className="rounded-md px-3 py-2 text-sm font-medium nav-text-theme"
+                    passHref
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Resume
+                  </Link>
                 </div>
               </div>
             </div>
             <div className="absolute right-0 flex items-center pr-2 sm:static sm:inset-auto space-x-10">
               <ToggleButton />
-              <a
+              <Link
                 href="https://github.com/harit06"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="py-2 text-sm font-medium nav-text-theme"
               >
                 Github
-              </a>
+              </Link>
               <a
                 onClick={handleEmailClick}
-                className="relative group rounded-full nav-text-theme cursor-pointer hidden md:block"
+                className="text-sm font-medium nav-text-theme cursor-pointer hidden md:block"
               >
                 {contactInfo}
               </a>
@@ -139,6 +155,15 @@ export default function HomeNav() {
           </Link>
           <Link href="/projects" className="block nav-text-theme text-lg">
             Projects
+          </Link>
+          <Link
+            href="HariharasudhanResume.pdf"
+            className="block nav-text-theme text-lg"
+            passHref
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Resume
           </Link>
         </div>
       </div>

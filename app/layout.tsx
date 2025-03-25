@@ -21,7 +21,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`antialiased theme-primary transition-colors duration-1800`}
+        className={`antialiased theme-primary transition-colors duration-1800 overflow-x-hidden`}
       >
         <HomeNav />
         {children}
