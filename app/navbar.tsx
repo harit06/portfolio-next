@@ -13,13 +13,6 @@ export default function HomeNav() {
   const handleMobileMenuClick = () => {
     setIsOpen(!isOpen)
   }
-  const handleOpenPDF = () => {
-    window.open(
-      "/public/HariharasudhanResume.pdf",
-      "_blank",
-      "noopener,noreferrer"
-    )
-  }
 
   return (
     <div className="top-0 z-50 fixed w-full bg-gradient-to-b dark:from-black/80 dark:to-black/10 from-white/80 to-white-10 transition-colors duration-1800">

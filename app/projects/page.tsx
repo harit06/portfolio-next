@@ -6,7 +6,7 @@ import { DynaPuff } from "next/font/google"
 
 const dynapuff = DynaPuff({ subsets: ["latin"] })
 
-import { useState, useEffect, useRef } from "react"
+import { useState, useEffect } from "react"
 
 function Projects() {
   const [page, setPage] = useState(0)
