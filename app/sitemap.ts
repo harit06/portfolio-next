@@ -32,11 +32,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "yearly",
       priority: 0.7,
     },
-    {
-      url: "https://hariharasudhan.vercel.app/HariharasudhanResume.pdf",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
+    // {
+    //   url: "https://hariharasudhan.vercel.app/HariharasudhanResume.pdf",
+    //   lastModified: new Date(),
+    //   changeFrequency: "monthly",
+    //   priority: 0.7,
+    // },
   ]
 }
